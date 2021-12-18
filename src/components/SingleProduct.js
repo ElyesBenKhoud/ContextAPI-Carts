@@ -1,4 +1,4 @@
-const SingleProduct = ({ prod }) => {
+const SingleProduct = ({ prod, cart, setcart }) => {
   return (
     <div className="products">
       <img src={prod.image} alt={prod.name} />
@@ -6,7 +6,28 @@ const SingleProduct = ({ prod }) => {
         <span style={{ fontWeight: 700 }}>{prod.name}</span>
         <span>$ {prod.price.substring(0, 3)}</span>
       </div>
-      <button className="add"> add To cart</button>
+      {/* if cart includes then show me remove otherwise show to add button */}
+      {cart.includes(prod) ? (
+        <button
+          className="add"
+          onClick={() => {
+            setcart(cart.filter((c) => c.id !== prod.id));
+          }}
+        >
+          {" "}
+          Remove from cart
+        </button>
+      ) : (
+        <button
+          className="add"
+          onClick={() => {
+            setcart([...cart, prod]);
+          }}
+        >
+          {" "}
+          add To cart
+        </button>
+      )}
     </div>
   );
 };
