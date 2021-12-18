@@ -2,11 +2,10 @@ import React, { useState } from "react";
 //faker hold fake imgs and dummy data
 import faker from "faker";
 import SingleProduct from "./SingleProduct";
-
 //to have same data
 faker.seed(100);
 
-const Home = ({ cart, setcart }) => {
+const Home = () => {
   //getting dummy data from faker website store it in 20 objects inside an array
   const productArray = [...Array(20)].map(() => ({
     id: faker.datatype.uuid(),
@@ -20,7 +19,7 @@ const Home = ({ cart, setcart }) => {
   return (
     <div className="productContainer">
       {products.map((prod, key) => (
-        <SingleProduct key={key} prod={prod} cart={cart} setcart={setcart} />
+        <SingleProduct key={key} prod={prod} />
       ))}
     </div>
   );
