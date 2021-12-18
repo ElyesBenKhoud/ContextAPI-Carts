@@ -23,8 +23,6 @@
   color: turquoise;
 }
 
-/* ----------------------- */
-
 .productContainer {
   display: flex;
   padding: 20px;
@@ -54,4 +52,9 @@
 .remove {
   background-color: grey;
   color: white;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
 }
