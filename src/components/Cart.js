@@ -1,27 +1,23 @@
-import React, { useState, useEffect, useContext } from "react";
+import { useEffect, useState } from "react";
+import { CartState } from "../Context";
 import SingleProduct from "./SingleProduct";
-import Carts from "./Context";
 
-export const Cart = () => {
-  const [total, settotal] = useState();
-  const { cart, setcart } = useContext(Carts);
+const Cart = () => {
+  const { cart } = CartState();
+  const [total, setTotal] = useState();
 
   useEffect(() => {
-    settotal(cart.reduce((acc, curr) => acc + Number(curr.price), 0));
+    setTotal(cart.reduce((acc, curr) => acc + Number(curr.price), 0));
   }, [cart]);
+
   return (
-    <div>
-      <span style={{ fontSize: 30 }}> My Cart</span>
+    <div style={{ textAlign: "center" }}>
+      <span style={{ fontSize: 30 }}>My Cart</span>
       <br />
-      <span style={{ fontSize: 30 }}> Total : {total} $</span>
+      <span style={{ fontSize: 30 }}>Total: {total}</span>
       <div className="productContainer">
         {cart.map((prod) => (
-          <SingleProduct
-            prod={prod}
-            key={prod.id}
-            cart={cart}
-            setcart={setcart}
-          />
+          <SingleProduct prod={prod} key={prod.id} />
         ))}
       </div>
     </div>
