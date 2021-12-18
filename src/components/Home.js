@@ -4,6 +4,7 @@ import faker from "faker";
 import SingleProduct from "./SingleProduct";
 
 function Home() {
+  //getting dummy data from faker website store it in 20 objects inside an array
   const productArray = [...Array(20)].map(() => ({
     id: faker.datatype.uuid(),
     name: faker.commerce.productName(),

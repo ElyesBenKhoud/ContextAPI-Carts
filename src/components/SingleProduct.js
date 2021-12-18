@@ -6,6 +6,7 @@ const SingleProduct = ({ prod }) => {
         <span style={{ fontWeight: 700 }}>{prod.name}</span>
         <span>$ {prod.price.substring(0, 3)}</span>
       </div>
+      <button className="add"> add To cart</button>
     </div>
   );
 };
