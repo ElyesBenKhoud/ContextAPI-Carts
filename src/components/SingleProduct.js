@@ -10,6 +10,7 @@ const SingleProduct = ({ prod }) => {
         <span style={{ fontWeight: 700 }}>{prod.name}</span>
         <span>$ {prod.price.substring(0, 3)}</span>
       </div>
+      {/* rendering add button or remove button dynamically */}
       {cart.includes(prod) ? (
         <button
           className="add remove"

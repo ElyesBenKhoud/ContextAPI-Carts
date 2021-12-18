@@ -2,6 +2,7 @@ import { CartState } from "../Context";
 import SingleProduct from "./SingleProduct";
 
 const Home = () => {
+  //getting products array from contextAPI and passing it to SingleProduct component
   const { products } = CartState();
 
   return (
