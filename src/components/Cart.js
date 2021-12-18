@@ -10,7 +10,7 @@ const Cart = ({ cart, setcart }) => {
     <div>
       <span style={{ fontSize: 30 }}> My Cart</span>
       <br />
-      <span style={{ fontSize: 30 }}> Total : Eur.{total}</span>
+      <span style={{ fontSize: 30 }}> Total : {total} $</span>
       <div className="productContainer">
         {cart.map((prod) => (
           <SingleProduct
