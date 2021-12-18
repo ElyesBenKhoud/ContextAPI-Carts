@@ -5,7 +5,7 @@ const Cart = ({ cart, setcart }) => {
   const [total, settotal] = useState();
   useEffect(() => {
     settotal(cart.reduce((acc, curr) => acc + Number(curr.price), 0));
-  }, []);
+  }, [cart]);
   return (
     <div>
       <span style={{ fontSize: 30 }}> My Cart</span>
